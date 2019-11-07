@@ -69,10 +69,6 @@ public class DartDioClientCodegen extends DartClientCodegen {
         outputFolder = "generated-code/dart-dio";
         embeddedTemplateDir = templateDir = "dart-dio";
 
-        //no tests at this time
-        modelTestTemplateFiles.clear();
-        apiTestTemplateFiles.clear();
-
         cliOptions.add(new CliOption(NULLABLE_FIELDS, "Is the null fields should be in the JSON payload"));
 
         typeMapping.put("file", "Uint8List");
@@ -201,6 +197,9 @@ public class DartDioClientCodegen extends DartClientCodegen {
 
         supportingFiles.add(new SupportingFile("gitignore.mustache", "", ".gitignore"));
         supportingFiles.add(new SupportingFile("README.mustache", "", "README.md"));
+
+        modelTestTemplateFiles.put("model_test.mustache", ".dart");
+        apiTestTemplateFiles.put("api_test.mustache", ".dart");
     }
 
     @Override

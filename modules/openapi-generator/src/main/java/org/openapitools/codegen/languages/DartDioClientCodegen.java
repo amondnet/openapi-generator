@@ -157,12 +157,6 @@ public class DartDioClientCodegen extends DartClientCodegen {
         return name;
     }
 
-    @Override
-    protected void addAdditionPropertiesToCodeGenModel(CodegenModel codegenModel, Schema schema) {
-        //super.addAdditionPropertiesToCodeGenModel(codegenModel, schema);
-        codegenModel.additionalPropertiesType = getSchemaType(ModelUtils.getAdditionalProperties(schema));
-        addImport(codegenModel, codegenModel.additionalPropertiesType);
-    }
 
     @Override
     public void processOpts() {
